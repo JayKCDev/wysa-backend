@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const HttpError = require("../models/http-error");
 
 module.exports = (req, res, next) => {
   let token;
@@ -20,6 +19,9 @@ module.exports = (req, res, next) => {
     req.userData = { userId: decodedToken.userId };
     next();
   } catch (error) {
-    return next(new HttpError(`Authentication Failed`, 401));
+    return res.status(401).json({
+      error: true,
+      message: "Authentication Failed",
+    });
   }
 };
