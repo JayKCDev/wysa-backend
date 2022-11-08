@@ -26,7 +26,10 @@ app.use("/users", usersRoutes);
 app.use("/onboarding", onboardingRoutes);
 
 app.use((req, res, next) => {
-  throw new HttpError("Could not find this route...", 404);
+  throw res.status(404).json({
+    error: true,
+    message: "Could not find this route...",
+  });
 });
 
 mongoose

@@ -36,5 +36,6 @@ lerna-debug.log*
 
 .env
 
+yarn.lock
 package-lock.json
 README.md
