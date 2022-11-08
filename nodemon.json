@@ -4,6 +4,7 @@
     "DB_USER": "JayKC",
     "DB_PASSWORD": "256128",
     "DB_NAME": "Wysa-Backend",
-    "JWT_SECRET": "SIR ELON & SIR STEVE JOBS ARE ABSOLUTE LEGENDS"
+    "JWT_SECRET": "SIR ELON & SIR STEVE JOBS ARE ABSOLUTE LEGENDS",
+    "FRONTEND_URL": "https://master--jay-wysa-frontend.netlify.app"
   }
 }

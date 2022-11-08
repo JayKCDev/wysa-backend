@@ -8,12 +8,16 @@ const onboardingRoutes = require("./routes/onboarding-routes");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: `${process.env.FRONTEND_URL}`,
+  })
+);
 
 const port = process.env.PORT || 5000;
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", `${process.env.FRONTEND_URL}`);
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested With, Content-Type, Accept, Authorization"
